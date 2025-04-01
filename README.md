@@ -12,6 +12,7 @@ This project demonstrates how to process a CSV file containing permit data using
 - **`dbt_project/`**: Contains the dbt-based implementation
 - **`construction_permits_data_dictionary`**: Data dictionary file
 - **`Construction_Permits`**: Input CSV file
+  - **Note**: Please copy a version of `construction_permits.csv` into this folder. The existing version includes data from 2000 to the present only, intentionally reduced in size to allow uploading to Git (no access to Git LFS).
 - **`dag.py`**: Airflow DAG definition
 - **`etl_pipeline.py`**: Standalone Python script
 - **`requirements.txt`**: Python package dependencies
@@ -64,6 +65,3 @@ A sample Airflow DAG is provided in `dag.py`. It leverages the same utility func
 - Enhance deduplication logic by conducting a deeper analysis of the data.
 - Refactor `util_function.py` into a more object-oriented, class-based structure for improved modularity.
 
----
-
-This version improves readability with concise phrasing, consistent formatting, and a logical flow while retaining all essential details.
