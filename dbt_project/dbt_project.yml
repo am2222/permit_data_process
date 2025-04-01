@@ -1,0 +1,26 @@
+name: "permits_project"
+version: "1.0.0"
+config-version: 2
+
+profile: "duckdb_profile"
+
+models:
+  permits_project:
+    staging:
+      materialized: table
+    marts:
+      materialized: table
+      export_to_sqlite:
+        materialized: ephemeral
+
+seeds:
+  permits_project:
+    construction_permits:
+      +enabled: true
+      +quote_columns: false
+      +duckdb_read_csv_options:
+        filename: "./seeds/construction_permits.csv" 
+        header: true 
+        auto_detect: true 
+        types: 
+          IssuedDate: TIMESTAMP # Force IssuedDate as TIMESTAMP
